@@ -1,12 +1,9 @@
 package chapter_1;
 
-import sun.management.snmp.jvminstr.JvmThreadInstanceEntryImpl;
 
-import javax.swing.plaf.nimbus.State;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.management.ThreadInfo;
 
 /**
  * Created by huojia on 2016/3/31 17:05.
@@ -24,8 +21,12 @@ public class Calculator implements Runnable {
             System.out.printf("%s: %d * %d = %d\n",Thread.currentThread().getName(),number,i,i*number);
         }
     }
-    public static void writeThreadInfo(PrintWriter pw,Thread thread,State state){
-        pw.printf("Main : ID");
+    public static void writeThreadInfo(PrintWriter pw,Thread thread,Thread.State state){
+        pw.printf("Main : ID %d - %s\r\n",thread.getId(),thread.getName());
+        pw.printf("Main : Priority: %d\r\n",thread.getPriority());
+        pw.printf("Main : Old State: %s\r\n",state);
+        pw.printf("Main : New State: %s\r\n",thread.getState());
+        pw.printf("Main : *********************************\n");
     }
     public static void main(String[] args) {
 //        for(int i = 1;i<=10;i++){
@@ -60,12 +61,22 @@ public class Calculator implements Runnable {
         }
 
         boolean finish = false;
-        while(!finish){
-            for(int i = 0;i<10;i++){
-                if(threads[i].getState() != status[i]){
-
+        try (FileWriter fileWriter = new FileWriter("D:\\log.txt");
+             PrintWriter pw = new PrintWriter(fileWriter);) {
+            while (!finish) {
+                for (int i = 0; i < 10; i++) {
+                    if (threads[i].getState() != status[i]) {
+                        writeThreadInfo(pw,threads[i],status[i]);
+                        status[i] = threads[i].getState();
+                    }
+                }
+                finish = true;
+                for(int i = 0; i<10;i++){
+                    finish = finish && (threads[i].getState() == Thread.State.TERMINATED);
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
     }
