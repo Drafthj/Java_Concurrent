@@ -1,7 +1,8 @@
-package chapter_2;
+package chapter_2.section_2;
 
 /**
  * Created by huojia on 2016/4/11 16:13.
+ * synchronized关键字在方法上的使用
  */
 public class Account {
     private double balance;
