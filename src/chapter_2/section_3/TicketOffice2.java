@@ -19,6 +19,6 @@ public class TicketOffice2 implements Runnable {
         cinema.returnTickets2(2);
         cinema.sellTickets1(3);
         cinema.sellTickets2(2);
-        cinema.sellTickets1(1);
+        cinema.sellTickets1(2);
     }
 }
