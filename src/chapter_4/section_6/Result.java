@@ -5,7 +5,7 @@ package chapter_4.section_6;
  */
 public class Result {
     private String name;
-    private String value;
+    private int value;
 
     public String getName() {
         return name;
@@ -15,11 +15,11 @@ public class Result {
         this.name = name;
     }
 
-    public String getValue() {
+    public int getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(int value) {
         this.value = value;
     }
 }
