@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by huojia on 2016/5/6 9:44.
+ * 消费者
  */
 public class Consumer implements Runnable {
     private List<String> buffer;
