@@ -7,6 +7,7 @@ import java.util.concurrent.*;
 
 /**
  * Created by huojia on 2016/5/6 13:42.
+ * 主线程
  */
 public class Main {
     public static void main(String[] args) {

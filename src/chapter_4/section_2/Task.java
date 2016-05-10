@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by huojia on 2016/5/6 10:27.
+ * 任务线程
  */
 public class Task implements Runnable{
     private Date initDate;

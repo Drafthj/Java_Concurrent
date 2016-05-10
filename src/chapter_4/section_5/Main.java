@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 
 /**
  * Created by huojia on 2016/5/6 15:42.
+ * 主线程
  * ExecutorService的invokeAny()方法会返回
  * 第一个执行完并且没有抛出异常的结果。
  *
