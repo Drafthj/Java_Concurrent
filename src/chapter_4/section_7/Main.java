@@ -27,6 +27,5 @@ public class Main {
             e.printStackTrace();
         }
         System.out.printf("Main: End at: %s\n",new Date());
-        System.out.printf("");
     }
 }
