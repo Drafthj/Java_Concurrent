@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * Created by huojia on 2016/4/19 9:53.
+ * 消费者
  */
 public class Consumer implements Runnable{
     private Buffer buffer;
