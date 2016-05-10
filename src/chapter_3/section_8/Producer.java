@@ -5,6 +5,7 @@ import java.util.concurrent.Exchanger;
 
 /**
  * Created by huojia on 2016/5/6 9:32.
+ * 生产者
  */
 public class Producer implements Runnable {
     private List<String> buffer;
